@@ -11,6 +11,7 @@ import {removeUser, getUser, getUsersInRoom ,default as addUser} from './utils/u
 const app = express()
 const server = http.createServer(app)
 const io =new Server(server)
+const port = process.env.PORT || 5000
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -70,6 +71,6 @@ io.on('connection',(socket)=>{
 })
 
 
-server.listen(5000, () => {
+server.listen(port, () => {
     console.log('server is up on port:' + 5000)
 })
