@@ -28,9 +28,15 @@ const addUser=({id,username,room})=>{
 }
 export const removeUser=(id)=>{
     const index = users.findIndex((user)=> user.id === id)
-    if (index) {
+    console.log(index)
+    console.log('>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
+    console.log(users)
+    if (index > -1) {
         return users.splice(index,1)[0]
     }
+    console.log('____________________________')
+    console.log(users)
+    console.log('____________________________')
 }
 export const getUser=(id)=>{
     const index = users.findIndex((user)=> user.id === id)

@@ -59,7 +59,8 @@ io.on('connection',(socket)=>{
 
     socket.on('disconnect',()=>{
         const user=removeUser(socket.id)
-        if (user) {
+        console.log(user)
+        if (user != undefined) {
             io.to(user.room).emit('message',generateMessage('Admin',`${user.username} has left!!`))
             io.to(user.room).emit('roomData',{
                 room:user.room,

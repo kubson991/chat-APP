@@ -49,9 +49,6 @@ socket.on('message',(message)=>{
         createAt:moment(message.createAt).format('h:m a')
     })
     $messages.insertAdjacentHTML('beforeend',html);
-    const MessageTemplate = document.querySelector('#message-template')
-    console.log($messages.scrollTop)
-    console.log($messages.scrollHeight)
     $messages.scrollTop = $messages.scrollHeight;
 })
 
@@ -64,6 +61,7 @@ socket.on('position',(message)=>{
 
     })
     $messages.insertAdjacentHTML('beforeend',html)
+    $messages.scrollTop = $messages.scrollHeight;
 })
 
 document.querySelector('#send-location').addEventListener('click',()=>{
